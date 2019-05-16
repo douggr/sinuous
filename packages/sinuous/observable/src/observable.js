@@ -115,11 +115,11 @@ export function S(listener, value) {
  * Run the given function just before the enclosing computation updates
  * or is disposed.
  * @param  {Function} fn
+ * @return {Function}
  */
 export function cleanup(fn) {
-  if (currentUpdate) {
-    currentUpdate._cleanups.push(fn);
-  }
+  currentUpdate && currentUpdate._cleanups.push(fn);
+  return fn;
 }
 
 /**
