@@ -2,6 +2,12 @@
 import { assign } from './utils.js';
 import { insert } from './insert.js';
 
+/**
+ * Create a sinuous `h` tag aka hyperscript.
+ * @param  {Object} options
+ * @param {Function} [options.subscribe] - Function that listens to state changes.
+ * @return {Function} `h` tag.
+ */
 export function context(options = {}) {
   options = assign(
     assign(
